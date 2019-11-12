@@ -131,7 +131,7 @@ var inventory = [
 **/
 
 function get3rdCar(inventory) {
-  const the3rd = inventory.find((item, index) => {
+  const the3rd = inventory.find((index) => {
     return index === 2 // we use 2 because index is zero-based.
   })
   return `The car is a ${the3rd.car_make} ${the3rd.car_model}`
@@ -291,15 +291,9 @@ function getGermanCars(inventory) {
  *   return num * 2
  * }
 */
-const sum = (a, b) => {
-  return a + b;
-}; // code here!
-const addFive = (num) => {
-  return num + 5;
-}; // code here!
-const argTimesTwo = (num) => {
-  return num * 2;
-}; // code here!
+const sum = (a, b) => a + b; // code here!
+const addFive = (num) =>  num + 5; // code here!
+const argTimesTwo = (num) => num * 2; // code here!
 
 /**
  * ### Challenge `carMaker`
@@ -314,11 +308,11 @@ const argTimesTwo = (num) => {
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(num) {
+function carMaker(odometer) {
   let car = {
-    odometer: num,
-    drive: function(distance){
-      car.odometer = num += distance;
+    odometer,
+    drive(distance){
+      car.odometer = odometer += distance;
       return car.odometer;
     }
   }
