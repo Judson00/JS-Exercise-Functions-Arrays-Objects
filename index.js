@@ -85,6 +85,7 @@ The returned object has the following characteristics:
  */
 function makeSmartPerson(name) {
   const makeSmartPerson = {
+    name,
     sum: function(num1, num2){
       return num1+num2;
     },
@@ -263,7 +264,7 @@ function getGermanCars(inventory) {
     if(
       inventory[i].car_make === "Audi" ||
       inventory[i].car_make === "Mercedes-Benz" ||
-      inventory[i].car_make === "Volkswegen" ||
+      inventory[i].car_make === "Volkswagen" ||
       inventory[i].car_make === "BMW" 
     ){
       germanCars.push(inventory[i]);
